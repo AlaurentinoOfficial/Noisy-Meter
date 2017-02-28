@@ -28,8 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea3 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Series series3 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Main));
             this.dbLevelLabel = new System.Windows.Forms.Label();
             this.dbProgressBar = new System.Windows.Forms.ProgressBar();
@@ -69,22 +70,28 @@
             // ChartVolume
             // 
             this.ChartVolume.AllowDrop = true;
-            chartArea3.BorderColor = System.Drawing.Color.Transparent;
-            chartArea3.Name = "ChartArea1";
-            chartArea3.ShadowColor = System.Drawing.Color.White;
-            this.ChartVolume.ChartAreas.Add(chartArea3);
+            chartArea1.BorderColor = System.Drawing.Color.Transparent;
+            chartArea1.Name = "ChartArea1";
+            chartArea1.ShadowColor = System.Drawing.Color.White;
+            this.ChartVolume.ChartAreas.Add(chartArea1);
             this.ChartVolume.Location = new System.Drawing.Point(-11, 120);
             this.ChartVolume.MaximumSize = new System.Drawing.Size(999, 999);
             this.ChartVolume.Name = "ChartVolume";
-            this.ChartVolume.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.SeaGreen;
-            series3.ChartArea = "ChartArea1";
-            series3.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
-            series3.LabelForeColor = System.Drawing.Color.Transparent;
-            series3.Name = "Times";
-            this.ChartVolume.Series.Add(series3);
+            this.ChartVolume.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.None;
+            this.ChartVolume.PaletteCustomColors = new System.Drawing.Color[] {
+        System.Drawing.Color.Teal,
+        System.Drawing.Color.Red};
+            series1.ChartArea = "ChartArea1";
+            series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
+            series1.LabelForeColor = System.Drawing.Color.Transparent;
+            series1.Name = "Times";
+            series2.ChartArea = "ChartArea1";
+            series2.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
+            series2.Name = "Limit";
+            this.ChartVolume.Series.Add(series1);
+            this.ChartVolume.Series.Add(series2);
             this.ChartVolume.Size = new System.Drawing.Size(545, 162);
             this.ChartVolume.TabIndex = 2;
-            this.ChartVolume.UseWaitCursor = true;
             // 
             // dbLevelMin
             // 

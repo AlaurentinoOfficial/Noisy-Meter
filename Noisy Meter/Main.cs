@@ -113,12 +113,13 @@ namespace Noisy_Meter
                     Convert.ToString(Convert.ToString(Math.Round(decibels)).ToCharArray()[1]));
             else
                 c = int.Parse(Convert.ToString(Convert.ToString(Math.Round(decibels)).ToCharArray()[0]));
+            c = c < 0 ? 1 : c;
 
             dbLevelLabel.Text = Convert.ToString((int)Math.Round(decibels)) + " dB";
             dbLevelMax.Text = Convert.ToString((int)Math.Round(max)) + " dB";
             dbLevelMin.Text = Convert.ToString((int)Math.Round(min)) + " dB";
             dbProgressBar.Value = (int)Math.Round(decibels);
-            dbComparative.Text = soundComparative[c-1];
+            dbComparative.Text = (c * 10) + "dB - " + soundComparative[c-1];
 
 
             var time = (DateTime.Now - firstTime).Seconds;
@@ -126,6 +127,7 @@ namespace Noisy_Meter
             if (time > lastSecond)
             {
                 ChartVolume.Series["Times"].Points.AddXY(time, decibels);
+                ChartVolume.Series["Limit"].Points.AddXY(time, Limit);
                 lastSecond = time;
             }
         }
