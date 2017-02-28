@@ -1,0 +1,12 @@
+c:\users\anderson laurentino\documents\visual studio 2015\Projects\Noisy Meter\Noisy Meter\bin\Debug\Noisy Meter.exe.config
+c:\users\anderson laurentino\documents\visual studio 2015\Projects\Noisy Meter\Noisy Meter\bin\Debug\Noisy Meter.exe
+c:\users\anderson laurentino\documents\visual studio 2015\Projects\Noisy Meter\Noisy Meter\bin\Debug\Noisy Meter.pdb
+c:\users\anderson laurentino\documents\visual studio 2015\Projects\Noisy Meter\Noisy Meter\bin\Debug\NAudio.dll
+c:\users\anderson laurentino\documents\visual studio 2015\Projects\Noisy Meter\Noisy Meter\bin\Debug\NAudio.xml
+c:\users\anderson laurentino\documents\visual studio 2015\Projects\Noisy Meter\Noisy Meter\obj\Debug\Noisy Meter.csprojResolveAssemblyReference.cache
+c:\users\anderson laurentino\documents\visual studio 2015\Projects\Noisy Meter\Noisy Meter\obj\Debug\Noisy_Meter.Main.resources
+c:\users\anderson laurentino\documents\visual studio 2015\Projects\Noisy Meter\Noisy Meter\obj\Debug\Noisy_Meter.Properties.Resources.resources
+c:\users\anderson laurentino\documents\visual studio 2015\Projects\Noisy Meter\Noisy Meter\obj\Debug\Noisy Meter.csproj.GenerateResource.Cache
+c:\users\anderson laurentino\documents\visual studio 2015\Projects\Noisy Meter\Noisy Meter\obj\Debug\Noisy Meter.exe
+c:\users\anderson laurentino\documents\visual studio 2015\Projects\Noisy Meter\Noisy Meter\obj\Debug\Noisy Meter.pdb
+C:\Users\Anderson Laurentino\documents\visual studio 2015\Projects\Noisy Meter\Noisy Meter\obj\Debug\Noisy_Meter.Config.resources
