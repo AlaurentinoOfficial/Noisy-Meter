@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
             System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
             System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Main));
@@ -74,23 +75,28 @@
             chartArea1.Name = "ChartArea1";
             chartArea1.ShadowColor = System.Drawing.Color.White;
             this.ChartVolume.ChartAreas.Add(chartArea1);
-            this.ChartVolume.Location = new System.Drawing.Point(-11, 120);
+            legend1.Name = "Legend1";
+            this.ChartVolume.Legends.Add(legend1);
+            this.ChartVolume.Location = new System.Drawing.Point(-27, 120);
             this.ChartVolume.MaximumSize = new System.Drawing.Size(999, 999);
             this.ChartVolume.Name = "ChartVolume";
             this.ChartVolume.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.None;
             this.ChartVolume.PaletteCustomColors = new System.Drawing.Color[] {
         System.Drawing.Color.Teal,
-        System.Drawing.Color.Red};
+        System.Drawing.Color.Red,
+        System.Drawing.Color.Lime};
             series1.ChartArea = "ChartArea1";
             series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
             series1.LabelForeColor = System.Drawing.Color.Transparent;
-            series1.Name = "Times";
+            series1.Legend = "Legend1";
+            series1.Name = "Decibels";
             series2.ChartArea = "ChartArea1";
             series2.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
+            series2.Legend = "Legend1";
             series2.Name = "Limit";
             this.ChartVolume.Series.Add(series1);
             this.ChartVolume.Series.Add(series2);
-            this.ChartVolume.Size = new System.Drawing.Size(545, 162);
+            this.ChartVolume.Size = new System.Drawing.Size(584, 162);
             this.ChartVolume.TabIndex = 2;
             // 
             // dbLevelMin
@@ -144,9 +150,9 @@
             this.dbComparative.ForeColor = System.Drawing.SystemColors.GrayText;
             this.dbComparative.Location = new System.Drawing.Point(3, 283);
             this.dbComparative.Name = "dbComparative";
-            this.dbComparative.Size = new System.Drawing.Size(154, 17);
+            this.dbComparative.Size = new System.Drawing.Size(200, 17);
             this.dbComparative.TabIndex = 7;
-            this.dbComparative.Text = "Almost quiet, Breathing";
+            this.dbComparative.Text = "10dB - Almost quiet, Breathing";
             // 
             // Main
             // 

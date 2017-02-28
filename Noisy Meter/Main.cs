@@ -107,13 +107,13 @@ namespace Noisy_Meter
             beforeDb = decibels;
 
             int c = 0;
-            if (decibels > 100)
+            if (decibels >= 100)
                 c = int.Parse(
                     Convert.ToString(Convert.ToString(Math.Round(decibels)).ToCharArray()[0]) +
                     Convert.ToString(Convert.ToString(Math.Round(decibels)).ToCharArray()[1]));
             else
                 c = int.Parse(Convert.ToString(Convert.ToString(Math.Round(decibels)).ToCharArray()[0]));
-            c = c < 0 ? 1 : c;
+            c = c <= 0 ? 1 : c;
 
             dbLevelLabel.Text = Convert.ToString((int)Math.Round(decibels)) + " dB";
             dbLevelMax.Text = Convert.ToString((int)Math.Round(max)) + " dB";
@@ -126,7 +126,7 @@ namespace Noisy_Meter
 
             if (time > lastSecond)
             {
-                ChartVolume.Series["Times"].Points.AddXY(time, decibels);
+                ChartVolume.Series["Decibels"].Points.AddXY(time, decibels);
                 ChartVolume.Series["Limit"].Points.AddXY(time, Limit);
                 lastSecond = time;
             }

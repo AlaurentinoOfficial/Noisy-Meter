@@ -12,8 +12,9 @@ namespace Noisy_Meter
 {
     public partial class Config : Form
     {
-        int duration = 5 * 60;
-        int limit = 60;
+        private Main main;
+        private int duration = 5 * 60;
+        private int limit = 60;
 
         public Config()
         {
@@ -25,10 +26,11 @@ namespace Noisy_Meter
             duration = Convert.ToInt32(durationValue.Value);
             limit = Convert.ToInt32(limitValue.Value);
 
-            Main main = new Main();
+            main = new Main();
             main.Duration = duration;
             main.Limit = limit;
             main.Show();
+            startBtn.Enabled = false;
             main.FormClosing += delegate {
                 main.StopRecording();
                 
@@ -38,7 +40,15 @@ namespace Noisy_Meter
                 MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
                     main.IsStoped = true;
                 }
+
+                startBtn.Enabled = true;
             };
+        }
+
+        private void limitValue_ValueChanged(object sender, EventArgs e)
+        {
+            if(main != null)
+                main.Limit = Convert.ToInt32(limitValue.Value);
         }
     }
 }

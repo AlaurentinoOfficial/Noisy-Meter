@@ -96,6 +96,11 @@
             0,
             0});
             this.limitValue.Location = new System.Drawing.Point(76, 74);
+            this.limitValue.Maximum = new decimal(new int[] {
+            120,
+            0,
+            0,
+            0});
             this.limitValue.Minimum = new decimal(new int[] {
             1,
             0,
@@ -109,6 +114,7 @@
             0,
             0,
             0});
+            this.limitValue.ValueChanged += new System.EventHandler(this.limitValue_ValueChanged);
             // 
             // durationValue
             // 
