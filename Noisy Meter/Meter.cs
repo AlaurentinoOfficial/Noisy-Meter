@@ -45,7 +45,7 @@ namespace Noisy_Meter
                 "Threshold of pain, Thunder"
             };
             IsStoped = true;
-            PrepereRecoder();
+            PrepareRecoder();
         }
 
         public void StartRecording()
@@ -83,7 +83,7 @@ namespace Noisy_Meter
                 UpdateView(decibels);
             }
             else
-                PrepereRecoder();
+                PrepareRecoder();
         }
 
         private void UpdateView(double decibels)
@@ -124,7 +124,7 @@ namespace Noisy_Meter
             }
         }
 
-        private void PrepereRecoder()
+        private void PrepareRecoder()
         {
             startBtn.Enabled = true;
             stopBtn.Enabled = false;
@@ -185,7 +185,7 @@ namespace Noisy_Meter
 
         private void stopBtn_Click(object sender, EventArgs e)
         {
-            PrepereRecoder();
+            PrepareRecoder();
         }
 
         private void limitValue_ValueChanged(object sender, EventArgs e)

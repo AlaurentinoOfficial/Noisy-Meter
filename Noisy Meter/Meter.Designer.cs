@@ -41,7 +41,6 @@
             this.label1 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.Calibation = new System.Windows.Forms.NumericUpDown();
-            this.label10 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.linkLabel1 = new System.Windows.Forms.LinkLabel();
             this.durationValue = new System.Windows.Forms.NumericUpDown();
@@ -135,7 +134,6 @@
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(5)))), ((int)(((byte)(31)))), ((int)(((byte)(35)))));
             this.panel2.Controls.Add(this.Calibation);
-            this.panel2.Controls.Add(this.label10);
             this.panel2.Controls.Add(this.label11);
             this.panel2.Controls.Add(this.linkLabel1);
             this.panel2.Controls.Add(this.durationValue);
@@ -171,16 +169,6 @@
             0,
             0,
             0});
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.ForeColor = System.Drawing.Color.White;
-            this.label10.Location = new System.Drawing.Point(239, 226);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(20, 13);
-            this.label10.TabIndex = 26;
-            this.label10.Text = "dB";
             // 
             // label11
             // 
@@ -405,7 +393,7 @@
             this.label9.BackColor = System.Drawing.Color.Transparent;
             this.label9.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label9.ForeColor = System.Drawing.Color.White;
-            this.label9.Location = new System.Drawing.Point(431, 466);
+            this.label9.Location = new System.Drawing.Point(458, 459);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(42, 15);
             this.label9.TabIndex = 19;
@@ -417,7 +405,7 @@
             this.label8.BackColor = System.Drawing.Color.Transparent;
             this.label8.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.ForeColor = System.Drawing.Color.White;
-            this.label8.Location = new System.Drawing.Point(54, 315);
+            this.label8.Location = new System.Drawing.Point(56, 315);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(42, 15);
             this.label8.TabIndex = 18;
@@ -537,7 +525,7 @@
             series2.Name = "Limit";
             this.ChartVolume.Series.Add(series1);
             this.ChartVolume.Series.Add(series2);
-            this.ChartVolume.Size = new System.Drawing.Size(618, 212);
+            this.ChartVolume.Size = new System.Drawing.Size(654, 212);
             this.ChartVolume.TabIndex = 16;
             // 
             // label3
@@ -687,7 +675,6 @@
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.NumericUpDown Calibation;
-        private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label11;
     }
 }
