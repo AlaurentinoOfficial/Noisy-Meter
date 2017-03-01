@@ -4,9 +4,28 @@ c:\users\anderson laurentino\documents\visual studio 2015\Projects\Noisy Meter\N
 c:\users\anderson laurentino\documents\visual studio 2015\Projects\Noisy Meter\Noisy Meter\bin\Debug\NAudio.dll
 c:\users\anderson laurentino\documents\visual studio 2015\Projects\Noisy Meter\Noisy Meter\bin\Debug\NAudio.xml
 c:\users\anderson laurentino\documents\visual studio 2015\Projects\Noisy Meter\Noisy Meter\obj\Debug\Noisy Meter.csprojResolveAssemblyReference.cache
-c:\users\anderson laurentino\documents\visual studio 2015\Projects\Noisy Meter\Noisy Meter\obj\Debug\Noisy_Meter.Main.resources
 c:\users\anderson laurentino\documents\visual studio 2015\Projects\Noisy Meter\Noisy Meter\obj\Debug\Noisy_Meter.Properties.Resources.resources
 c:\users\anderson laurentino\documents\visual studio 2015\Projects\Noisy Meter\Noisy Meter\obj\Debug\Noisy Meter.csproj.GenerateResource.Cache
 c:\users\anderson laurentino\documents\visual studio 2015\Projects\Noisy Meter\Noisy Meter\obj\Debug\Noisy Meter.exe
 c:\users\anderson laurentino\documents\visual studio 2015\Projects\Noisy Meter\Noisy Meter\obj\Debug\Noisy Meter.pdb
-C:\Users\Anderson Laurentino\documents\visual studio 2015\Projects\Noisy Meter\Noisy Meter\obj\Debug\Noisy_Meter.Config.resources
+C:\Users\Anderson Laurentino\documents\visual studio 2015\Projects\Noisy Meter\Noisy Meter\obj\Debug\Noisy_Meter.Meter.resources
+C:\Users\Anderson Laurentino\documents\visual studio 2015\Projects\Noisy Meter\Noisy Meter\bin\Debug\Bunifu_UI_v1.52.dll
+C:\Users\Anderson Laurentino\documents\visual studio 2015\Projects\Noisy Meter\Noisy Meter\bin\Debug\CircularProgressBar.dll
+C:\Users\Anderson Laurentino\documents\visual studio 2015\Projects\Noisy Meter\Noisy Meter\bin\Debug\Microsoft.Web.Infrastructure.dll
+C:\Users\Anderson Laurentino\documents\visual studio 2015\Projects\Noisy Meter\Noisy Meter\bin\Debug\Newtonsoft.Json.dll
+C:\Users\Anderson Laurentino\documents\visual studio 2015\Projects\Noisy Meter\Noisy Meter\bin\Debug\System.Web.Helpers.dll
+C:\Users\Anderson Laurentino\documents\visual studio 2015\Projects\Noisy Meter\Noisy Meter\bin\Debug\System.Web.Mvc.dll
+C:\Users\Anderson Laurentino\documents\visual studio 2015\Projects\Noisy Meter\Noisy Meter\bin\Debug\System.Web.Razor.dll
+C:\Users\Anderson Laurentino\documents\visual studio 2015\Projects\Noisy Meter\Noisy Meter\bin\Debug\System.Web.WebPages.Deployment.dll
+C:\Users\Anderson Laurentino\documents\visual studio 2015\Projects\Noisy Meter\Noisy Meter\bin\Debug\System.Web.WebPages.dll
+C:\Users\Anderson Laurentino\documents\visual studio 2015\Projects\Noisy Meter\Noisy Meter\bin\Debug\System.Web.WebPages.Razor.dll
+C:\Users\Anderson Laurentino\documents\visual studio 2015\Projects\Noisy Meter\Noisy Meter\bin\Debug\WinFormAnimation.dll
+C:\Users\Anderson Laurentino\documents\visual studio 2015\Projects\Noisy Meter\Noisy Meter\bin\Debug\CircularProgressBar.xml
+C:\Users\Anderson Laurentino\documents\visual studio 2015\Projects\Noisy Meter\Noisy Meter\bin\Debug\Newtonsoft.Json.xml
+C:\Users\Anderson Laurentino\documents\visual studio 2015\Projects\Noisy Meter\Noisy Meter\bin\Debug\System.Web.Helpers.xml
+C:\Users\Anderson Laurentino\documents\visual studio 2015\Projects\Noisy Meter\Noisy Meter\bin\Debug\System.Web.Mvc.xml
+C:\Users\Anderson Laurentino\documents\visual studio 2015\Projects\Noisy Meter\Noisy Meter\bin\Debug\System.Web.Razor.xml
+C:\Users\Anderson Laurentino\documents\visual studio 2015\Projects\Noisy Meter\Noisy Meter\bin\Debug\System.Web.WebPages.xml
+C:\Users\Anderson Laurentino\documents\visual studio 2015\Projects\Noisy Meter\Noisy Meter\bin\Debug\System.Web.WebPages.Deployment.xml
+C:\Users\Anderson Laurentino\documents\visual studio 2015\Projects\Noisy Meter\Noisy Meter\bin\Debug\System.Web.WebPages.Razor.xml
+C:\Users\Anderson Laurentino\documents\visual studio 2015\Projects\Noisy Meter\Noisy Meter\bin\Debug\WinFormAnimation.xml
