@@ -36,8 +36,14 @@
             System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.bunifuElipse1 = new Bunifu.Framework.UI.BunifuElipse(this.components);
             this.panel1 = new System.Windows.Forms.Panel();
+            this.bunifuImageButton2 = new Bunifu.Framework.UI.BunifuImageButton();
+            this.bunifuImageButton1 = new Bunifu.Framework.UI.BunifuImageButton();
             this.label1 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.Calibation = new System.Windows.Forms.NumericUpDown();
+            this.label10 = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
+            this.linkLabel1 = new System.Windows.Forms.LinkLabel();
             this.durationValue = new System.Windows.Forms.NumericUpDown();
             this.stopBtn = new Bunifu.Framework.UI.BunifuFlatButton();
             this.limitValue = new System.Windows.Forms.NumericUpDown();
@@ -47,6 +53,8 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.bunifuGradientPanel1 = new Bunifu.Framework.UI.BunifuGradientPanel();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
             this.dbLevel = new CircularProgressBar.CircularProgressBar();
             this.dbComparative = new System.Windows.Forms.Label();
             this.ChartVolume = new System.Windows.Forms.DataVisualization.Charting.Chart();
@@ -54,19 +62,15 @@
             this.label4 = new System.Windows.Forms.Label();
             this.dbMax = new CircularProgressBar.CircularProgressBar();
             this.dbMin = new CircularProgressBar.CircularProgressBar();
-            this.bunifuImageButton2 = new Bunifu.Framework.UI.BunifuImageButton();
-            this.bunifuImageButton1 = new Bunifu.Framework.UI.BunifuImageButton();
-            this.linkLabel1 = new System.Windows.Forms.LinkLabel();
-            this.label8 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton1)).BeginInit();
             this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.Calibation)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.durationValue)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.limitValue)).BeginInit();
             this.bunifuGradientPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ChartVolume)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton1)).BeginInit();
             this.SuspendLayout();
             // 
             // bunifuElipse1
@@ -88,12 +92,40 @@
             this.panel1.MouseEnter += new System.EventHandler(this.panel1_MouseEnter);
             this.panel1.MouseMove += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseMove);
             // 
+            // bunifuImageButton2
+            // 
+            this.bunifuImageButton2.BackColor = System.Drawing.Color.Transparent;
+            this.bunifuImageButton2.Image = global::Noisy_Meter.Properties.Resources.microphone;
+            this.bunifuImageButton2.ImageActive = null;
+            this.bunifuImageButton2.Location = new System.Drawing.Point(17, 15);
+            this.bunifuImageButton2.Name = "bunifuImageButton2";
+            this.bunifuImageButton2.Size = new System.Drawing.Size(45, 45);
+            this.bunifuImageButton2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.bunifuImageButton2.TabIndex = 2;
+            this.bunifuImageButton2.TabStop = false;
+            this.bunifuImageButton2.Zoom = 10;
+            // 
+            // bunifuImageButton1
+            // 
+            this.bunifuImageButton1.BackColor = System.Drawing.Color.Transparent;
+            this.bunifuImageButton1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.bunifuImageButton1.Image = global::Noisy_Meter.Properties.Resources.close;
+            this.bunifuImageButton1.ImageActive = null;
+            this.bunifuImageButton1.Location = new System.Drawing.Point(849, 15);
+            this.bunifuImageButton1.Name = "bunifuImageButton1";
+            this.bunifuImageButton1.Size = new System.Drawing.Size(45, 45);
+            this.bunifuImageButton1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.bunifuImageButton1.TabIndex = 1;
+            this.bunifuImageButton1.TabStop = false;
+            this.bunifuImageButton1.Zoom = 10;
+            this.bunifuImageButton1.Click += new System.EventHandler(this.bunifuImageButton1_Click);
+            // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Consolas", 16F);
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(93, 25);
+            this.label1.Location = new System.Drawing.Point(68, 24);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(144, 26);
             this.label1.TabIndex = 0;
@@ -102,6 +134,9 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(5)))), ((int)(((byte)(31)))), ((int)(((byte)(35)))));
+            this.panel2.Controls.Add(this.Calibation);
+            this.panel2.Controls.Add(this.label10);
+            this.panel2.Controls.Add(this.label11);
             this.panel2.Controls.Add(this.linkLabel1);
             this.panel2.Controls.Add(this.durationValue);
             this.panel2.Controls.Add(this.stopBtn);
@@ -116,9 +151,78 @@
             this.panel2.Size = new System.Drawing.Size(293, 529);
             this.panel2.TabIndex = 19;
             // 
+            // Calibation
+            // 
+            this.Calibation.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(5)))), ((int)(((byte)(31)))), ((int)(((byte)(35)))));
+            this.Calibation.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.Calibation.Font = new System.Drawing.Font("Consolas", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Calibation.ForeColor = System.Drawing.Color.White;
+            this.Calibation.Location = new System.Drawing.Point(33, 222);
+            this.Calibation.Maximum = new decimal(new int[] {
+            120,
+            0,
+            0,
+            0});
+            this.Calibation.Name = "Calibation";
+            this.Calibation.Size = new System.Drawing.Size(200, 20);
+            this.Calibation.TabIndex = 27;
+            this.Calibation.Value = new decimal(new int[] {
+            70,
+            0,
+            0,
+            0});
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.ForeColor = System.Drawing.Color.White;
+            this.label10.Location = new System.Drawing.Point(239, 226);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(20, 13);
+            this.label10.TabIndex = 26;
+            this.label10.Text = "dB";
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
+            this.label11.ForeColor = System.Drawing.Color.White;
+            this.label11.Location = new System.Drawing.Point(27, 194);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(111, 25);
+            this.label11.TabIndex = 25;
+            this.label11.Text = "Calibration:";
+            // 
+            // linkLabel1
+            // 
+            this.linkLabel1.ActiveLinkColor = System.Drawing.Color.White;
+            this.linkLabel1.AutoSize = true;
+            this.linkLabel1.BackColor = System.Drawing.Color.Transparent;
+            this.linkLabel1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.linkLabel1.Font = new System.Drawing.Font("Consolas", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.linkLabel1.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.linkLabel1.LinkBehavior = System.Windows.Forms.LinkBehavior.NeverUnderline;
+            this.linkLabel1.LinkColor = System.Drawing.Color.White;
+            this.linkLabel1.Location = new System.Drawing.Point(47, 513);
+            this.linkLabel1.Name = "linkLabel1";
+            this.linkLabel1.Size = new System.Drawing.Size(199, 13);
+            this.linkLabel1.TabIndex = 24;
+            this.linkLabel1.TabStop = true;
+            this.linkLabel1.Text = "Developed by Anderson Laurentino";
+            this.linkLabel1.VisitedLinkColor = System.Drawing.Color.White;
+            // 
             // durationValue
             // 
+            this.durationValue.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(5)))), ((int)(((byte)(31)))), ((int)(((byte)(35)))));
+            this.durationValue.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.durationValue.Font = new System.Drawing.Font("Consolas", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.durationValue.ForeColor = System.Drawing.Color.White;
             this.durationValue.Location = new System.Drawing.Point(34, 72);
+            this.durationValue.Maximum = new decimal(new int[] {
+            99999,
+            0,
+            0,
+            0});
             this.durationValue.Name = "durationValue";
             this.durationValue.Size = new System.Drawing.Size(200, 20);
             this.durationValue.TabIndex = 23;
@@ -130,8 +234,8 @@
             // 
             // stopBtn
             // 
-            this.stopBtn.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(139)))), ((int)(((byte)(87)))));
-            this.stopBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(139)))), ((int)(((byte)(87)))));
+            this.stopBtn.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.stopBtn.BackColor = System.Drawing.Color.OrangeRed;
             this.stopBtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.stopBtn.BorderRadius = 0;
             this.stopBtn.ButtonText = "Stop";
@@ -149,9 +253,9 @@
             this.stopBtn.IconVisible = true;
             this.stopBtn.IconZoom = 90D;
             this.stopBtn.IsTab = false;
-            this.stopBtn.Location = new System.Drawing.Point(152, 220);
+            this.stopBtn.Location = new System.Drawing.Point(152, 275);
             this.stopBtn.Name = "stopBtn";
-            this.stopBtn.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(139)))), ((int)(((byte)(87)))));
+            this.stopBtn.Normalcolor = System.Drawing.Color.OrangeRed;
             this.stopBtn.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(129)))), ((int)(((byte)(77)))));
             this.stopBtn.OnHoverTextColor = System.Drawing.Color.White;
             this.stopBtn.selected = false;
@@ -165,6 +269,10 @@
             // 
             // limitValue
             // 
+            this.limitValue.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(5)))), ((int)(((byte)(31)))), ((int)(((byte)(35)))));
+            this.limitValue.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.limitValue.Font = new System.Drawing.Font("Consolas", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.limitValue.ForeColor = System.Drawing.Color.White;
             this.limitValue.Increment = new decimal(new int[] {
             5,
             0,
@@ -212,7 +320,7 @@
             this.startBtn.IconVisible = true;
             this.startBtn.IconZoom = 90D;
             this.startBtn.IsTab = false;
-            this.startBtn.Location = new System.Drawing.Point(14, 220);
+            this.startBtn.Location = new System.Drawing.Point(14, 275);
             this.startBtn.Name = "startBtn";
             this.startBtn.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(139)))), ((int)(((byte)(87)))));
             this.startBtn.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(129)))), ((int)(((byte)(77)))));
@@ -264,9 +372,9 @@
             this.label6.ForeColor = System.Drawing.Color.White;
             this.label6.Location = new System.Drawing.Point(240, 75);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(15, 13);
+            this.label6.Size = new System.Drawing.Size(23, 13);
             this.label6.TabIndex = 19;
-            this.label6.Text = "m";
+            this.label6.Text = "min";
             // 
             // bunifuGradientPanel1
             // 
@@ -290,6 +398,30 @@
             this.bunifuGradientPanel1.Quality = 10;
             this.bunifuGradientPanel1.Size = new System.Drawing.Size(614, 519);
             this.bunifuGradientPanel1.TabIndex = 18;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.BackColor = System.Drawing.Color.Transparent;
+            this.label9.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.ForeColor = System.Drawing.Color.White;
+            this.label9.Location = new System.Drawing.Point(431, 466);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(42, 15);
+            this.label9.TabIndex = 19;
+            this.label9.Text = "(sec)";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.BackColor = System.Drawing.Color.Transparent;
+            this.label8.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.ForeColor = System.Drawing.Color.White;
+            this.label8.Location = new System.Drawing.Point(54, 315);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(42, 15);
+            this.label8.TabIndex = 18;
+            this.label8.Text = "(dBs)";
             // 
             // dbLevel
             // 
@@ -320,13 +452,12 @@
             this.dbLevel.SuperscriptMargin = new System.Windows.Forms.Padding(10, 35, 0, 0);
             this.dbLevel.SuperscriptText = "";
             this.dbLevel.TabIndex = 12;
-            this.dbLevel.Text = "10dp";
+            this.dbLevel.Text = "35dB";
             this.dbLevel.TextMargin = new System.Windows.Forms.Padding(8, 8, 0, 0);
-            this.dbLevel.Value = 68;
+            this.dbLevel.Value = 35;
             // 
             // dbComparative
             // 
-            this.dbComparative.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.dbComparative.AutoSize = true;
             this.dbComparative.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dbComparative.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(200)))), ((int)(((byte)(200)))));
@@ -340,9 +471,10 @@
             // ChartVolume
             // 
             this.ChartVolume.BackColor = System.Drawing.Color.Transparent;
+            chartArea1.AxisX.IntervalAutoMode = System.Windows.Forms.DataVisualization.Charting.IntervalAutoMode.VariableCount;
             chartArea1.AxisX.IntervalOffsetType = System.Windows.Forms.DataVisualization.Charting.DateTimeIntervalType.Seconds;
             chartArea1.AxisX.IntervalType = System.Windows.Forms.DataVisualization.Charting.DateTimeIntervalType.Seconds;
-            chartArea1.AxisX.IsLabelAutoFit = false;
+            chartArea1.AxisX.IsMarginVisible = false;
             chartArea1.AxisX.LabelStyle.Font = new System.Drawing.Font("Consolas", 10F);
             chartArea1.AxisX.LabelStyle.ForeColor = System.Drawing.Color.White;
             chartArea1.AxisX.LineColor = System.Drawing.Color.White;
@@ -352,9 +484,9 @@
             chartArea1.AxisX.MajorGrid.LineColor = System.Drawing.Color.Silver;
             chartArea1.AxisX.MajorGrid.LineWidth = 2;
             chartArea1.AxisX.MajorTickMark.Enabled = false;
+            chartArea1.AxisX.MaximumAutoSize = 100F;
             chartArea1.AxisX.TitleForeColor = System.Drawing.Color.White;
             chartArea1.AxisX2.MajorGrid.LineColor = System.Drawing.Color.Silver;
-            chartArea1.AxisY.IsLabelAutoFit = false;
             chartArea1.AxisY.LabelStyle.Font = new System.Drawing.Font("Consolas", 10F);
             chartArea1.AxisY.LabelStyle.ForeColor = System.Drawing.Color.White;
             chartArea1.AxisY.LineColor = System.Drawing.Color.White;
@@ -363,13 +495,14 @@
             chartArea1.AxisY.MajorGrid.LineColor = System.Drawing.Color.White;
             chartArea1.AxisY.MajorTickMark.LineColor = System.Drawing.Color.White;
             chartArea1.AxisY.MajorTickMark.LineWidth = 2;
+            chartArea1.AxisY.MaximumAutoSize = 100F;
             chartArea1.AxisY.MinorGrid.LineColor = System.Drawing.Color.White;
             chartArea1.AxisY.MinorTickMark.LineColor = System.Drawing.Color.White;
             chartArea1.AxisY.ScaleBreakStyle.LineColor = System.Drawing.Color.White;
             chartArea1.AxisY.TitleForeColor = System.Drawing.Color.White;
             chartArea1.AxisY2.MajorGrid.LineColor = System.Drawing.Color.Silver;
             chartArea1.BackColor = System.Drawing.Color.Transparent;
-            chartArea1.BorderColor = System.Drawing.Color.Transparent;
+            chartArea1.BorderColor = System.Drawing.Color.White;
             chartArea1.CursorX.Interval = 15D;
             chartArea1.Name = "FirstGraph";
             chartArea1.ShadowColor = System.Drawing.Color.Wheat;
@@ -406,7 +539,6 @@
             this.ChartVolume.Series.Add(series2);
             this.ChartVolume.Size = new System.Drawing.Size(618, 212);
             this.ChartVolume.TabIndex = 16;
-            this.ChartVolume.TabStop = false;
             // 
             // label3
             // 
@@ -461,9 +593,9 @@
             this.dbMax.SuperscriptMargin = new System.Windows.Forms.Padding(10, 35, 0, 0);
             this.dbMax.SuperscriptText = "";
             this.dbMax.TabIndex = 15;
-            this.dbMax.Text = "10dp";
+            this.dbMax.Text = "35dB";
             this.dbMax.TextMargin = new System.Windows.Forms.Padding(8, 8, 0, 0);
-            this.dbMax.Value = 68;
+            this.dbMax.Value = 35;
             // 
             // dbMin
             // 
@@ -494,79 +626,9 @@
             this.dbMin.SuperscriptMargin = new System.Windows.Forms.Padding(10, 35, 0, 0);
             this.dbMin.SuperscriptText = "";
             this.dbMin.TabIndex = 13;
-            this.dbMin.Text = "10dp";
+            this.dbMin.Text = "35dB";
             this.dbMin.TextMargin = new System.Windows.Forms.Padding(8, 8, 0, 0);
-            this.dbMin.Value = 68;
-            // 
-            // bunifuImageButton2
-            // 
-            this.bunifuImageButton2.BackColor = System.Drawing.Color.Transparent;
-            this.bunifuImageButton2.Image = global::Noisy_Meter.Properties.Resources.microphone;
-            this.bunifuImageButton2.ImageActive = null;
-            this.bunifuImageButton2.Location = new System.Drawing.Point(36, 15);
-            this.bunifuImageButton2.Name = "bunifuImageButton2";
-            this.bunifuImageButton2.Size = new System.Drawing.Size(45, 45);
-            this.bunifuImageButton2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.bunifuImageButton2.TabIndex = 2;
-            this.bunifuImageButton2.TabStop = false;
-            this.bunifuImageButton2.Zoom = 10;
-            // 
-            // bunifuImageButton1
-            // 
-            this.bunifuImageButton1.BackColor = System.Drawing.Color.Transparent;
-            this.bunifuImageButton1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.bunifuImageButton1.Image = global::Noisy_Meter.Properties.Resources.close;
-            this.bunifuImageButton1.ImageActive = null;
-            this.bunifuImageButton1.Location = new System.Drawing.Point(849, 15);
-            this.bunifuImageButton1.Name = "bunifuImageButton1";
-            this.bunifuImageButton1.Size = new System.Drawing.Size(45, 45);
-            this.bunifuImageButton1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.bunifuImageButton1.TabIndex = 1;
-            this.bunifuImageButton1.TabStop = false;
-            this.bunifuImageButton1.Zoom = 10;
-            this.bunifuImageButton1.Click += new System.EventHandler(this.bunifuImageButton1_Click);
-            // 
-            // linkLabel1
-            // 
-            this.linkLabel1.ActiveLinkColor = System.Drawing.Color.White;
-            this.linkLabel1.AutoSize = true;
-            this.linkLabel1.BackColor = System.Drawing.Color.Transparent;
-            this.linkLabel1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.linkLabel1.Font = new System.Drawing.Font("Consolas", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.linkLabel1.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.linkLabel1.LinkBehavior = System.Windows.Forms.LinkBehavior.NeverUnderline;
-            this.linkLabel1.LinkColor = System.Drawing.Color.White;
-            this.linkLabel1.Location = new System.Drawing.Point(47, 513);
-            this.linkLabel1.Name = "linkLabel1";
-            this.linkLabel1.Size = new System.Drawing.Size(199, 13);
-            this.linkLabel1.TabIndex = 24;
-            this.linkLabel1.TabStop = true;
-            this.linkLabel1.Text = "Developed by Anderson Laurentino";
-            this.linkLabel1.VisitedLinkColor = System.Drawing.Color.White;
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.BackColor = System.Drawing.Color.Transparent;
-            this.label8.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.ForeColor = System.Drawing.Color.White;
-            this.label8.Location = new System.Drawing.Point(54, 315);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(42, 15);
-            this.label8.TabIndex = 18;
-            this.label8.Text = "(dBs)";
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.BackColor = System.Drawing.Color.Transparent;
-            this.label9.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.ForeColor = System.Drawing.Color.White;
-            this.label9.Location = new System.Drawing.Point(431, 466);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(42, 15);
-            this.label9.TabIndex = 19;
-            this.label9.Text = "(sec)";
+            this.dbMin.Value = 35;
             // 
             // Meter
             // 
@@ -583,15 +645,16 @@
             this.Text = "Noisy Meter";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton1)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.Calibation)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.durationValue)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.limitValue)).EndInit();
             this.bunifuGradientPanel1.ResumeLayout(false);
             this.bunifuGradientPanel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ChartVolume)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -623,5 +686,8 @@
         private System.Windows.Forms.LinkLabel linkLabel1;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.NumericUpDown Calibation;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Label label11;
     }
 }

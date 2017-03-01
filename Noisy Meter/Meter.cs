@@ -13,13 +13,12 @@ namespace Noisy_Meter
 {
     public partial class Meter : Form
     {
-        private int Duration;
         private int Limit;
         private int Overflow;
         private bool IsStoped;
         private WaveIn Recorder;
         private DateTime FirstTime;
-        private int LastSecond;
+        private double LastSecond;
         private double Min;
         private double Max;
         private string[] SoundComparative;
@@ -45,20 +44,8 @@ namespace Noisy_Meter
                 "Concerts, Screaming child",
                 "Threshold of pain, Thunder"
             };
-            Overflow = 0;
-            IsStoped = false;
-            Min = 35;
-            Max = 35;
-
-            dbLevel.Text = "35 dB";
-            dbLevel.Value = 35;
-            dbMax.Text = "35 dB";
-            dbMax.Value = 35;
-            dbMin.Text = "35 dB";
-            dbMin.Value = 35;
-            dbComparative.Text = "30dB - " + SoundComparative[0];
-            startBtn.Enabled = true;
-            stopBtn.Enabled = false;
+            IsStoped = true;
+            PrepereRecoder();
         }
 
         public void StartRecording()
@@ -72,7 +59,8 @@ namespace Noisy_Meter
 
         private void RecorderOnDataAvailable(object sender, WaveInEventArgs args)
         {
-            if (Duration > (DateTime.Now - FirstTime).Minutes || Duration == 0)
+            if (Convert.ToInt32(durationValue.Value) > (DateTime.Now - FirstTime).Minutes
+                || Convert.ToInt32(durationValue.Value) == 0)
             {
                 double sum = 0;
                 for (var i = 0; i < args.Buffer.Length; i = i + 2)
@@ -81,26 +69,21 @@ namespace Noisy_Meter
                     sum += (sample * sample);
                 }
                 double rms = Math.Sqrt(sum / (args.Buffer.Length / 2));
-                double decibels = 20 * Math.Log10(rms) + 70;
+                double decibels = 20 * Math.Log10(rms);
+                decibels += Convert.ToDouble(Calibation.Value) + (decibels * 0.2);
                 decibels = decibels > 120 ? 120 : decibels;
                 decibels = decibels < 0 ? 0 : decibels;
 
-                if (Max == 0)
-                {
-                    Max = decibels;
-                    Min = decibels;
-                }
-
-                if (decibels < Min)
-                    Min = decibels;
-
-                if (decibels > Max)
-                    Max = decibels;
+                Max = Max == 0 ? decibels : Max;
+                Min = Max == 0 ? decibels : Min;
+                
+                Min = decibels < Min ? decibels : Min;
+                Max = decibels > Max ? decibels : Max;
 
                 UpdateView(decibels);
             }
             else
-                StopRecoder();
+                PrepereRecoder();
         }
 
         private void UpdateView(double decibels)
@@ -127,8 +110,11 @@ namespace Noisy_Meter
             dbMin.Value = (int)Math.Round(Min);
             dbComparative.Text = (c * 10) + "dB - " + SoundComparative[c - 1];
 
+            var time = Math.Round((DateTime.Now - FirstTime).TotalSeconds);
 
-            var time = (DateTime.Now - FirstTime).Seconds;
+            if(time % 30 == 0)
+                foreach (var series in ChartVolume.Series)
+                    series.Points.Clear();
 
             if (time > LastSecond)
             {
@@ -138,32 +124,44 @@ namespace Noisy_Meter
             }
         }
 
-        private void StopRecoder()
+        private void PrepereRecoder()
         {
             startBtn.Enabled = true;
             stopBtn.Enabled = false;
-            Recorder.StopRecording();
-            if (IsStoped)
+            Overflow = 0;
+            IsStoped = true;
+            Min = 35;
+            Max = 35;
+
+            dbLevel.Text = "35 dB";
+            dbLevel.Value = 35;
+            dbMax.Text = "35 dB";
+            dbMax.Value = 35;
+            dbMin.Text = "35 dB";
+            dbMin.Value = 35;
+            dbComparative.Text = "30dB - " + SoundComparative[0];
+
+            foreach (var series in ChartVolume.Series)
+                series.Points.Clear();
+
+            ChartVolume.Series["Noisy"].Points.AddXY(0, 10);
+            ChartVolume.Series["Limit"].Points.AddXY(0, 50);
+
+            ChartVolume.Series["Noisy"].Points.AddXY(3, 45);
+            ChartVolume.Series["Limit"].Points.AddXY(3, 50);
+
+            ChartVolume.Series["Noisy"].Points.AddXY(6, 25);
+            ChartVolume.Series["Limit"].Points.AddXY(6, 50);
+
+            ChartVolume.Series["Noisy"].Points.AddXY(12, 67);
+            ChartVolume.Series["Limit"].Points.AddXY(12, 50);
+
+            if (!IsStoped)
             {
-                MessageBox.Show("The limit was extrapolated " + Overflow + " times", "Status",
+                if(Convert.ToInt32(durationValue.Value) != 0)
+                    MessageBox.Show("The limit was extrapolated " + Overflow + " times", "Status",
             MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
-                IsStoped = true;
-
-                Overflow = 0;
-                IsStoped = false;
-                Min = 35;
-                Max = 35;
-
-                dbLevel.Text = "35 dB";
-                dbLevel.Value = 35;
-                dbMax.Text = "35 dB";
-                dbMax.Value = 35;
-                dbMin.Text = "35 dB";
-                dbMin.Value = 35;
-                dbComparative.Text = "30dB - " + SoundComparative[0];
-
-                foreach (var series in ChartVolume.Series)
-                    series.Points.Clear();
+                Recorder.StopRecording();
             }
         }
 
@@ -175,18 +173,19 @@ namespace Noisy_Meter
         private void startBtn_Click(object sender, EventArgs e)
         {
             FirstTime = DateTime.Now;
-            LastSecond = 0;
-            IsStoped = true;
+            LastSecond = -1;
+            IsStoped = false;
             Limit = Convert.ToInt32(limitValue.Value);
-            Duration = Convert.ToInt32(durationValue.Value);
             startBtn.Enabled = false;
             stopBtn.Enabled = true;
+            foreach (var series in ChartVolume.Series)
+                series.Points.Clear();
             StartRecording();
         }
 
         private void stopBtn_Click(object sender, EventArgs e)
         {
-            StopRecoder();
+            PrepereRecoder();
         }
 
         private void limitValue_ValueChanged(object sender, EventArgs e)
