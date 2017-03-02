@@ -122,11 +122,11 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Consolas", 16F);
+            this.label1.Font = new System.Drawing.Font("Trebuchet MS", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
             this.label1.Location = new System.Drawing.Point(68, 24);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(144, 26);
+            this.label1.Size = new System.Drawing.Size(121, 27);
             this.label1.TabIndex = 0;
             this.label1.Text = "Noisy Meter";
             // 
@@ -173,11 +173,11 @@
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
+            this.label11.Font = new System.Drawing.Font("Trebuchet MS", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label11.ForeColor = System.Drawing.Color.White;
             this.label11.Location = new System.Drawing.Point(27, 194);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(111, 25);
+            this.label11.Size = new System.Drawing.Size(120, 26);
             this.label11.TabIndex = 25;
             this.label11.Text = "Calibration:";
             // 
@@ -191,7 +191,7 @@
             this.linkLabel1.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.linkLabel1.LinkBehavior = System.Windows.Forms.LinkBehavior.NeverUnderline;
             this.linkLabel1.LinkColor = System.Drawing.Color.White;
-            this.linkLabel1.Location = new System.Drawing.Point(47, 513);
+            this.linkLabel1.Location = new System.Drawing.Point(47, 516);
             this.linkLabel1.Name = "linkLabel1";
             this.linkLabel1.Size = new System.Drawing.Size(199, 13);
             this.linkLabel1.TabIndex = 24;
@@ -252,7 +252,7 @@
             this.stopBtn.Text = "Stop";
             this.stopBtn.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.stopBtn.Textcolor = System.Drawing.Color.White;
-            this.stopBtn.TextFont = new System.Drawing.Font("Corbel", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.stopBtn.TextFont = new System.Drawing.Font("Trebuchet MS", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.stopBtn.Click += new System.EventHandler(this.stopBtn_Click);
             // 
             // limitValue
@@ -285,7 +285,6 @@
             0,
             0,
             0});
-            this.limitValue.ValueChanged += new System.EventHandler(this.limitValue_ValueChanged);
             // 
             // startBtn
             // 
@@ -319,7 +318,7 @@
             this.startBtn.Text = "Start";
             this.startBtn.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.startBtn.Textcolor = System.Drawing.Color.White;
-            this.startBtn.TextFont = new System.Drawing.Font("Corbel", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.startBtn.TextFont = new System.Drawing.Font("Trebuchet MS", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.startBtn.Click += new System.EventHandler(this.startBtn_Click);
             // 
             // label2
@@ -335,22 +334,22 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
+            this.label7.Font = new System.Drawing.Font("Trebuchet MS", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.Color.White;
             this.label7.Location = new System.Drawing.Point(29, 44);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(91, 25);
+            this.label7.Size = new System.Drawing.Size(97, 26);
             this.label7.TabIndex = 18;
             this.label7.Text = "Duration:";
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
+            this.label5.Font = new System.Drawing.Font("Trebuchet MS", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.White;
             this.label5.Location = new System.Drawing.Point(28, 119);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(58, 25);
+            this.label5.Size = new System.Drawing.Size(66, 26);
             this.label5.TabIndex = 20;
             this.label5.Text = "Limit:";
             // 
@@ -391,11 +390,11 @@
             // 
             this.label9.AutoSize = true;
             this.label9.BackColor = System.Drawing.Color.Transparent;
-            this.label9.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.Font = new System.Drawing.Font("Trebuchet MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label9.ForeColor = System.Drawing.Color.White;
-            this.label9.Location = new System.Drawing.Point(458, 459);
+            this.label9.Location = new System.Drawing.Point(458, 457);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(42, 15);
+            this.label9.Size = new System.Drawing.Size(37, 18);
             this.label9.TabIndex = 19;
             this.label9.Text = "(sec)";
             // 
@@ -403,11 +402,11 @@
             // 
             this.label8.AutoSize = true;
             this.label8.BackColor = System.Drawing.Color.Transparent;
-            this.label8.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Font = new System.Drawing.Font("Trebuchet MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.ForeColor = System.Drawing.Color.White;
-            this.label8.Location = new System.Drawing.Point(56, 315);
+            this.label8.Location = new System.Drawing.Point(55, 315);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(42, 15);
+            this.label8.Size = new System.Drawing.Size(38, 18);
             this.label8.TabIndex = 18;
             this.label8.Text = "(dBs)";
             // 
@@ -449,12 +448,11 @@
             this.dbComparative.AutoSize = true;
             this.dbComparative.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dbComparative.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(200)))), ((int)(((byte)(200)))));
-            this.dbComparative.Location = new System.Drawing.Point(150, 263);
+            this.dbComparative.Location = new System.Drawing.Point(194, 265);
             this.dbComparative.Name = "dbComparative";
-            this.dbComparative.Size = new System.Drawing.Size(279, 19);
+            this.dbComparative.Size = new System.Drawing.Size(216, 19);
             this.dbComparative.TabIndex = 17;
-            this.dbComparative.Text = "10dB - Almost quiet, Breathing";
-            this.dbComparative.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.dbComparative.Text = "Almost quiet, Breathing";
             // 
             // ChartVolume
             // 
@@ -497,7 +495,7 @@
             this.ChartVolume.ChartAreas.Add(chartArea1);
             this.ChartVolume.ImeMode = System.Windows.Forms.ImeMode.On;
             legend1.BackColor = System.Drawing.Color.Transparent;
-            legend1.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            legend1.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             legend1.ForeColor = System.Drawing.Color.White;
             legend1.IsTextAutoFit = false;
             legend1.Name = "Legend1";

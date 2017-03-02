@@ -13,7 +13,6 @@ namespace Noisy_Meter
 {
     public partial class Meter : Form
     {
-        private int Limit;
         private int Overflow;
         private bool IsStoped;
         private WaveIn Recorder;
@@ -31,21 +30,41 @@ namespace Noisy_Meter
         {
             InitializeComponent();
             SoundComparative = new string[] {
-                "Almost quiet, Breathing",
-                "Rustling leaves, Ticking watch",
-                "Whisper, Quiet rural area",
-                "Quiet libary, Bird calls",
-                "Quiet office, Moderate rainfall",
-                "Normal conversation at 3 ft",
-                "Busy traffic, Vacuum cleaner",
-                "Loud music, Alarm clocks",
-                "Diesel truck, Power mower",
-                "Motorcycle, Blow dryer",
-                "Concerts, Screaming child",
-                "Threshold of pain, Thunder"
+                "  Almost quiet",
+                " Rustling leaves",
+                "Quiet rural area",
+                "  Quiet libary",
+                "  Quiet office",
+                "  Conversation",
+                "  Busy traffic",
+                "   Loud music",
+                "  Diesel truck",
+                "   Motorcycle",
+                "    Concerts",
+                "     Thunder"
             };
             IsStoped = true;
-            PrepareRecoder();
+            startBtn.Enabled = true;
+            stopBtn.Enabled = false;
+            dbLevel.Text = "35 dB";
+            dbLevel.Value = 35;
+            dbMax.Text = "35 dB";
+            dbMax.Value = 35;
+            dbMin.Text = "35 dB";
+            dbMin.Value = 35;
+            dbComparative.Text = "30dB - " + SoundComparative[0];
+
+            ChartVolume.Series["Noisy"].Points.AddXY(0, 10);
+            ChartVolume.Series["Limit"].Points.AddXY(0, 50);
+
+            ChartVolume.Series["Noisy"].Points.AddXY(3, 45);
+            ChartVolume.Series["Limit"].Points.AddXY(3, 50);
+
+            ChartVolume.Series["Noisy"].Points.AddXY(6, 25);
+            ChartVolume.Series["Limit"].Points.AddXY(6, 50);
+
+            ChartVolume.Series["Noisy"].Points.AddXY(12, 67);
+            ChartVolume.Series["Limit"].Points.AddXY(12, 50);
         }
 
         public void StartRecording()
@@ -59,8 +78,7 @@ namespace Noisy_Meter
 
         private void RecorderOnDataAvailable(object sender, WaveInEventArgs args)
         {
-            if (Convert.ToInt32(durationValue.Value) > (DateTime.Now - FirstTime).Minutes
-                || Convert.ToInt32(durationValue.Value) == 0)
+            if (Convert.ToInt32(durationValue.Value) > (DateTime.Now - FirstTime).Minutes)
             {
                 double sum = 0;
                 for (var i = 0; i < args.Buffer.Length; i = i + 2)
@@ -74,8 +92,11 @@ namespace Noisy_Meter
                 decibels = decibels > 120 ? 120 : decibels;
                 decibels = decibels < 0 ? 0 : decibels;
 
-                Max = Max == 0 ? decibels : Max;
-                Min = Max == 0 ? decibels : Min;
+                if((DateTime.Now - FirstTime).TotalSeconds <= 1)
+                { 
+                    Min = decibels;
+                    Max = decibels;
+                }
                 
                 Min = decibels < Min ? decibels : Min;
                 Max = decibels > Max ? decibels : Max;
@@ -83,12 +104,12 @@ namespace Noisy_Meter
                 UpdateView(decibels);
             }
             else
-                PrepareRecoder();
+                StopRecoder();
         }
 
         private void UpdateView(double decibels)
         {
-            if (decibels > Limit && BeforeDb < Limit)
+            if (decibels > Convert.ToInt32(limitValue.Value) && BeforeDb < Convert.ToInt32(limitValue.Value))
                     ++Overflow;
             BeforeDb = decibels;
 
@@ -108,7 +129,7 @@ namespace Noisy_Meter
             dbMax.Value = (int)Math.Round(Max);
             dbMin.Text = Convert.ToString((int)Math.Round(Min)) + " dB";
             dbMin.Value = (int)Math.Round(Min);
-            dbComparative.Text = (c * 10) + "dB - " + SoundComparative[c - 1];
+            dbComparative.Text = SoundComparative[c - 1];
 
             var time = Math.Round((DateTime.Now - FirstTime).TotalSeconds);
 
@@ -119,49 +140,23 @@ namespace Noisy_Meter
             if (time > LastSecond)
             {
                 ChartVolume.Series["Noisy"].Points.AddXY(time, decibels);
-                ChartVolume.Series["Limit"].Points.AddXY(time, Limit);
+                ChartVolume.Series["Limit"].Points.AddXY(time, Convert.ToInt32(limitValue.Value));
                 LastSecond = time;
             }
         }
 
-        private void PrepareRecoder()
+        private void StopRecoder()
         {
             startBtn.Enabled = true;
             stopBtn.Enabled = false;
-            Overflow = 0;
-            IsStoped = true;
-            Min = 35;
-            Max = 35;
-
-            dbLevel.Text = "35 dB";
-            dbLevel.Value = 35;
-            dbMax.Text = "35 dB";
-            dbMax.Value = 35;
-            dbMin.Text = "35 dB";
-            dbMin.Value = 35;
-            dbComparative.Text = "30dB - " + SoundComparative[0];
-
-            foreach (var series in ChartVolume.Series)
-                series.Points.Clear();
-
-            ChartVolume.Series["Noisy"].Points.AddXY(0, 10);
-            ChartVolume.Series["Limit"].Points.AddXY(0, 50);
-
-            ChartVolume.Series["Noisy"].Points.AddXY(3, 45);
-            ChartVolume.Series["Limit"].Points.AddXY(3, 50);
-
-            ChartVolume.Series["Noisy"].Points.AddXY(6, 25);
-            ChartVolume.Series["Limit"].Points.AddXY(6, 50);
-
-            ChartVolume.Series["Noisy"].Points.AddXY(12, 67);
-            ChartVolume.Series["Limit"].Points.AddXY(12, 50);
 
             if (!IsStoped)
             {
-                if(Convert.ToInt32(durationValue.Value) != 0)
+                IsStoped = true;
+                Recorder.StopRecording();
+                if (Convert.ToInt32(durationValue.Value) != 0)
                     MessageBox.Show("The limit was extrapolated " + Overflow + " times", "Status",
             MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
-                Recorder.StopRecording();
             }
         }
 
@@ -172,10 +167,10 @@ namespace Noisy_Meter
 
         private void startBtn_Click(object sender, EventArgs e)
         {
+            IsStoped = false;
             FirstTime = DateTime.Now;
             LastSecond = -1;
-            IsStoped = false;
-            Limit = Convert.ToInt32(limitValue.Value);
+            Overflow = 0;
             startBtn.Enabled = false;
             stopBtn.Enabled = true;
             foreach (var series in ChartVolume.Series)
@@ -185,12 +180,7 @@ namespace Noisy_Meter
 
         private void stopBtn_Click(object sender, EventArgs e)
         {
-            PrepareRecoder();
-        }
-
-        private void limitValue_ValueChanged(object sender, EventArgs e)
-        {
-            Limit = Convert.ToInt32(limitValue.Value);
+            StopRecoder();
         }
 
         private void panel1_MouseMove(object sender, MouseEventArgs e)
