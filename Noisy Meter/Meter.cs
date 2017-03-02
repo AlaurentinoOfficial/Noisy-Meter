@@ -133,7 +133,7 @@ namespace Noisy_Meter
 
             var time = Math.Round((DateTime.Now - FirstTime).TotalSeconds);
 
-            if(time % 30 == 0)
+            if(time % 30 == 0 && time < Convert.ToInt32(durationValue.Value)*60)
                 foreach (var series in ChartVolume.Series)
                     series.Points.Clear();
 
