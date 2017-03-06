@@ -14,7 +14,6 @@ namespace Noisy_Meter
     public partial class Meter : Form
     {
         private int Overflow;
-        private bool IsStoped;
         private WaveIn Recorder;
         private DateTime FirstTime;
         private double LastSecond;
@@ -43,7 +42,6 @@ namespace Noisy_Meter
                 "    Concerts",
                 "     Thunder"
             };
-            IsStoped = true;
             startBtn.Enabled = true;
             stopBtn.Enabled = false;
             dbLevel.Text = "35 dB";
@@ -69,6 +67,13 @@ namespace Noisy_Meter
 
         public void StartRecording()
         {
+            FirstTime = DateTime.Now;
+            LastSecond = -1;
+            Overflow = 0;
+            startBtn.Enabled = false;
+            stopBtn.Enabled = true;
+            foreach (var series in ChartVolume.Series)
+                series.Points.Clear();
             Recorder = new WaveIn();
             Recorder.DeviceNumber = 0;
             Recorder.WaveFormat = new WaveFormat(44100, WaveIn.GetCapabilities(0).Channels);
@@ -149,15 +154,9 @@ namespace Noisy_Meter
         {
             startBtn.Enabled = true;
             stopBtn.Enabled = false;
-
-            if (!IsStoped)
-            {
-                IsStoped = true;
-                Recorder.StopRecording();
-                if (Convert.ToInt32(durationValue.Value) != 0)
-                    MessageBox.Show("The limit was extrapolated " + Overflow + " times", "Status",
+            Recorder.StopRecording();
+            MessageBox.Show("The limit was extrapolated " + Overflow + " times", "Result",
             MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
-            }
         }
 
         private void bunifuImageButton1_Click(object sender, EventArgs e)
@@ -167,14 +166,6 @@ namespace Noisy_Meter
 
         private void startBtn_Click(object sender, EventArgs e)
         {
-            IsStoped = false;
-            FirstTime = DateTime.Now;
-            LastSecond = -1;
-            Overflow = 0;
-            startBtn.Enabled = false;
-            stopBtn.Enabled = true;
-            foreach (var series in ChartVolume.Series)
-                series.Points.Clear();
             StartRecording();
         }
 
