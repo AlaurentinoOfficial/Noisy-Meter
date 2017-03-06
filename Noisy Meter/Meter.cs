@@ -78,7 +78,7 @@ namespace Noisy_Meter
 
         private void RecorderOnDataAvailable(object sender, WaveInEventArgs args)
         {
-            if (Convert.ToInt32(durationValue.Value) > (DateTime.Now - FirstTime).Minutes)
+            if (Convert.ToInt32(durationValue.Value) > (DateTime.Now - FirstTime).Minutes || Convert.ToInt32(durationValue.Value) == 0)
             {
                 double sum = 0;
                 for (var i = 0; i < args.Buffer.Length; i = i + 2)
